@@ -323,19 +323,6 @@ def run_backtest(
                 "net_return": net_return,
             }
         )
-
-        total_long_weight = sum(
-            w for w in valid_weights.values()
-            if w > 0
-        )
-
-        if abs(total_long_weight - LONG_GROSS) > 1e-10:
-            print(
-                "WARNING:",
-                signal_date,
-                "actual long gross =",
-                total_long_weight,
-            )
         previous_weights = (
             valid_weights
         )
